@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hello world</title>
+	<script src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">{{content}}</div>
+	<script>
+		/*var app = document.getElementById('app');
+		app.innerHTML = 'world';
+		setTimeout(function(){
+			app.innerHTML = 'by world'
+		},2000);*/
+
+		var app = new Vue({
+			el:'#app',
+			data:{
+				content:'Hello world'
+			}
+		});
+		setTimeout(function(){
+			app.$data.content='bye world';
+		},2000);
+	</script>
+</body>
+</html>
+
+不需要关注dom的操作，只需要数据改变页面就会跟着改变，只需将精力放到数据管理上即可
